@@ -32,27 +32,24 @@ const Time = () => {
   let icon = icon1;
   let period = '';
   let day = '';
-  const [bodyBackground, setBodyBackground] = useState(
-    'background-image: url(https://free4kwallpapers.com/uploads/originals/2015/11/03/a-beautiful-sunny-day-wallpaper.jpg)'
-  );
+  let bodyBackground =
+    'background-image: url(https://free4kwallpapers.com/uploads/originals/2015/11/03/a-beautiful-sunny-day-wallpaper.jpg)';
 
-  useEffect(() => {
-    if (hour < 9 && hour >= 5) {
-      setBodyBackground(
-        'background-image: url(https://static.vecteezy.com/system/resources/previews/004/770/331/large_2x/sunset-and-orange-cloud-and-blue-dawn-sky-with-cloud-horizontal-lines-motion-effect-on-background-from-sunshine-free-photo.jpg)'
-      );
-    } else if (hour < 16 && hour >= 9) {
-      setBodyBackground(
-        ' background-image: url(https://free4kwallpapers.com/uploads/originals/2015/11/03/a-beautiful-sunny-day-wallpaper.jpg)'
-      );
-    } else if (hour < 18 && hour >= 16) {
-      setBodyBackground(' background-image: url(https://wallpaperaccess.com/full/1131217.jpg)');
-    } else if ((hour >= 21 && hour <= 23) || (hour >= 0 && hour < 5)) {
-      setBodyBackground('background-image: url(https://wallpaperaccess.com/full/1320623.jpg)');
-    } else {
-      setBodyBackground(' background-image: url(https://wallpaperaccess.com/full/1685406.jpg)');
-    }
-  }, [hour]);
+  if (hour < 9 && hour >= 5) {
+    bodyBackground =
+      'background-image: url(https://static.vecteezy.com/system/resources/previews/004/770/331/large_2x/sunset-and-orange-cloud-and-blue-dawn-sky-with-cloud-horizontal-lines-motion-effect-on-background-from-sunshine-free-photo.jpg)';
+  } else if (hour < 16 && hour >= 9) {
+    bodyBackground =
+      ' background-image: url(https://free4kwallpapers.com/uploads/originals/2015/11/03/a-beautiful-sunny-day-wallpaper.jpg)';
+  } else if (hour < 18 && hour >= 16) {
+    bodyBackground = ' background-image: url(https://wallpaperaccess.com/full/1131217.jpg)';
+  } else if ((hour >= 21 && hour <= 23) || (hour >= 0 && hour < 5)) {
+    bodyBackground = 'background-image: url(https://wallpaperaccess.com/full/1320623.jpg)';
+  } else {
+    bodyBackground = ' background-image: url(https://wallpaperaccess.com/full/1685406.jpg)';
+  }
+  document.querySelector('body').style = bodyBackground;
+
   if (hour < 12 && hour >= 0) {
     day = 'GOOD MORNING,';
   } else if (hour < 18 && hour >= 12) {
@@ -82,8 +79,6 @@ const Time = () => {
   if (second < 10) {
     second = '0' + second;
   }
-
-  document.querySelector('body').style = bodyBackground;
 
   return (
     <section>
