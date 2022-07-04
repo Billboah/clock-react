@@ -32,10 +32,9 @@ const Time = () => {
   let icon = icon1;
   let period = '';
   let day = '';
-  let [bodyBackground, setBodyBackground] = useState(
+  const [bodyBackground, setBodyBackground] = useState(
     'background-image: url(https://free4kwallpapers.com/uploads/originals/2015/11/03/a-beautiful-sunny-day-wallpaper.jpg)'
   );
-  document.querySelector('body').style = bodyBackground;
 
   useEffect(() => {
     if (hour < 9 && hour >= 5) {
@@ -83,6 +82,8 @@ const Time = () => {
   if (second < 10) {
     second = '0' + second;
   }
+
+  document.querySelector('body').style = bodyBackground;
 
   return (
     <section>
