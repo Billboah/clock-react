@@ -161,7 +161,8 @@ img {
   background-image:none;
   background-color: rgb(200,200,200);
  display: none;
-  height: 50%;       
+  height: 50%;   
+  overflow: scroll;    
 }
 
 ul {
